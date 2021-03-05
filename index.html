@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="html, CSS, JavaScript">
+	<meta name="keywords" content="movies, cinema">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CinemaScope</title>
+	
+	<link href="style.css" type="text/css" rel="stylesheet">
+	
+	<script src="script.js"></script>
+	
+</head>
+<body>
+
+	<!-- header which also has the button for the dropdown nav bar -->
+	<div id="header">
+		<!-- website heading, "display: inline;" allows the nav bar button to be next to it -->
+		<h1 id="webtitle" style="display: inline;">CinemaScope</h1>
+		<!-- the button to open the nav bar, "float: right;" makes it stay on the right -->
+		<div id="navbtn" style="float: right;" onclick="openNav()">
+			<!-- these divs create the three white bars for the nav bar icon -->
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+		</div>
+	</div>
+	
+	<!-- Nav Bar -->
+	<div id="nav">
+		<!-- the close button ( &times; will create an x ) -->
+		<a href="javascript:void(0)" id="closebtn" onclick="closeNav()" style="float: right;">&times;</a>
+		<!-- the actual links -->
+		<!-- the link for the current page must have class="active", so i can change the color of it to show the user what page they're on -->
+		<a href="index.html" class="currentpage">Home</a>
+		<a href="movies.html">Movies</a>
+		<a href="cinemas.html">Cinemas</a>
+		<a href="menu.html">Menu</a>
+		<a href="signup.html">Sign Up</a>
+	</div>
+	
+	<!-- quality, well written content -->
+	<div id="content">
+		<h2>About Us</h2>
+		<p>Our company, CinemaScope, has been established for approximately 5 years. We currently have 5 cinemas across the country, including in London, Birmingham and Leeds. We show a variety of films in our cinemas, most of which are brand new. As well as this, we sometimes run film festivals which show a variety of older and contemporary movies for our customers to enjoy.</p>
+		
+		<h2>Featured Films</h2>
+		<p>We currently have a variety of movies that you can watch, including these featured films below. For more information check out our <a href="movies.html">Movies page.</a></p>
+	</div>
+	
+	<!-- slideshow container -->
+	<div class="slideshow-div">
+		<!-- slides -->
+		<div class="slides fade" id="slide1">
+			<img src="images/img1.jpg" style="width:100%;">
+			<div class="slideshownav">
+				<span class="slideshowdot" onclick="currentSlide(1)"></span>
+				<span class="slideshowdot" onclick="currentSlide(2)"></span>
+				<span class="slideshowdot" onclick="currentSlide(3)"></span>
+				<span class="slideshowdot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+		<div class="slides fade">
+			<img src="images/img2.jpg" style="width:100%;">
+			<div class="slideshownav">
+				<span class="slideshowdot" onclick="currentSlide(1)"></span>
+				<span class="slideshowdot" onclick="currentSlide(2)"></span>
+				<span class="slideshowdot" onclick="currentSlide(3)"></span>
+				<span class="slideshowdot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+		<div class="slides fade">
+			<img src="images/img3.jpg" style="width:100%;">
+			<div class="slideshownav">
+				<span class="slideshowdot" onclick="currentSlide(1)"></span>
+				<span class="slideshowdot" onclick="currentSlide(2)"></span>
+				<span class="slideshowdot" onclick="currentSlide(3)"></span>
+				<span class="slideshowdot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+		<div class="slides fade">
+			<img src="images/img4.jpg" style="width:100%;">
+			<div class="slideshownav">
+				<span class="slideshowdot" onclick="currentSlide(1)"></span>
+				<span class="slideshowdot" onclick="currentSlide(2)"></span>
+				<span class="slideshowdot" onclick="currentSlide(3)"></span>
+				<span class="slideshowdot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="time">
+		<p id="datetime"></p>
+		<p><a href="signup.html" id="formlink">Want to recieve updates about new movies and offers?<br>Sign up for our email list!</a></p>
+	</div>
+	
+	<!-- this creates a blank space at the bottom of the webpage so the date and time don't cover the content at the bottom -->
+	<div id="timespace"></div>
+	
+	<script>
+		/* for some reason displaying the date doesn't want to work in the external script */
+		
+		var currentday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var currentmonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		
+		function getDateTime() {
+			var d = new Date();
+			
+			var nday = d.getDay(); /* gets the current day */
+			var ndate = d.getDate(); /* gets the current date */
+			var nmonth = d.getMonth(); /* gets the current month */
+			var nyear = d.getFullYear(); /* gets the current year */
+			
+			var nhour = d.getHours(); /* gets the current hour */
+			var nmin = d.getMinutes(); /* gets the current minute */
+			
+			if (nmin <= 9) nmin = "0" + nmin; /* adds a 0 in front of the minutes if it is 9 or less */
+			
+			var datetimetext = nhour + ":" + nmin + "<br>" + currentday[nday] + ", " + ndate + " " + currentmonth[nmonth] + ", " + nyear;
+			document.getElementById("datetime").innerHTML = datetimetext;
+		}
+		
+		getDateTime();
+		setInterval(getDateTime,1000);
+		
+	</script>
+	
+</body>
+</html>

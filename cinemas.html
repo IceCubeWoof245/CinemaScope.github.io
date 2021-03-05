@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="html, CSS, JavaScript">
+	<meta name="keywords" content="movies, cinema">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CinemaScope</title>
+	
+	<link href="style.css" type="text/css" rel="stylesheet">
+	
+	<script src="script.js"></script>
+	
+</head>
+<body>
+
+	<!-- header which also has the button for the dropdown nav bar -->
+	<div id="header">
+		<!-- website heading, "display: inline;" allows the nav bar button to be next to it -->
+		<h1 id="webtitle" style="display: inline;">CinemaScope</h1>
+		<!-- the button to open the nav bar, "float: right;" makes it stay on the right -->
+		<div id="navbtn" style="float: right;" onclick="openNav()">
+			<!-- these divs create the three white bars for the nav bar icon -->
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+		</div>
+	</div>
+	
+	<!-- Nav Bar -->
+	<div id="nav">
+		<!-- the close button ( &times; will create an x ) -->
+		<a href="javascript:void(0)" id="closebtn" onclick="closeNav()" style="float: right;">&times;</a>
+		<!-- the actual links -->
+		<!-- the link for the current page must have class="active", so i can change the color of it to show the user what page they're on -->
+		<a href="index.html">Home</a>
+		<a href="movies.html">Movies</a>
+		<a href="cinemas.html" class="currentpage">Cinemas</a>
+		<a href="menu.html">Menu</a>
+		<a href="signup.html">Sign Up</a>
+	</div>
+	
+	<!-- quality, well written content -->
+	<div id="content">
+		<h2>Our Cinemas</h2>
+		<p>We currently have 5 cinemas across the country for you to choose from.</p>
+	</div>
+	
+	<div class="cinemabox" style="display: inline-block;">
+		<img class="cinemalocation" src="images/london.jpg" alt="London">
+		<h2>London</h2>
+	</div>
+	
+	<div class="cinemabox" style="display: inline-block;">
+		<img class="cinemalocation" src="images/manchester.jpg" alt="Manchester">
+		<h2>Manchester</h2>
+	</div>
+	
+	<div class="cinemabox" style="display: inline-block;">
+		<img class="cinemalocation" src="images/leeds.jpg" alt="Leeds">
+		<h2>Leeds</h2>
+	</div>
+	
+	<div class="cinemabox" style="display: inline-block;">
+		<img class="cinemalocation" src="images/birmingham.jpg" alt="Birmingham">
+		<h2>Birmingham</h2>
+	</div>
+	
+	<div class="cinemabox" style="display: inline-block;">
+		<img class="cinemalocation" src="images/edinburgh.jpg" alt="Edinburgh">
+		<h2>Edinburgh</h2>
+	</div>
+	
+	<div id="time">
+		<p id="datetime"></p>
+		<p><a href="signup.html" id="formlink">Want to recieve updates about new movies and offers?<br>Sign up for our email list!</a></p>
+	</div>
+	
+	<!-- this creates a blank space at the bottom of the webpage so the date and time don't cover the content at the bottom -->
+	<div id="timespace"></div>
+	
+	<script>
+		/* for some reason displaying the date doesn't want to work in the external script */
+		
+		var currentday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var currentmonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		
+		function getDateTime() {
+			var d = new Date();
+			
+			var nday = d.getDay(); /* gets the current day */
+			var ndate = d.getDate(); /* gets the current date */
+			var nmonth = d.getMonth(); /* gets the current month */
+			var nyear = d.getFullYear(); /* gets the current year */
+			
+			var nhour = d.getHours(); /* gets the current hour */
+			var nmin = d.getMinutes(); /* gets the current minute */
+			
+			if (nmin <= 9) nmin = "0" + nmin; /* adds a 0 in front of the minutes if it is 9 or less */
+			
+			var datetimetext = nhour + ":" + nmin + "<br>" + currentday[nday] + ", " + ndate + " " + currentmonth[nmonth] + ", " + nyear;
+			document.getElementById("datetime").innerHTML = datetimetext;
+		}
+		
+		getDateTime();
+		setInterval(getDateTime,1000);
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="html, CSS, JavaScript">
+	<meta name="keywords" content="movies, cinema">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CinemaScope</title>
+	
+	<link href="style.css" type="text/css" rel="stylesheet">
+	
+	<script src="script.js"></script>
+	
+</head>
+<body>
+
+	<!-- header which also has the button for the dropdown nav bar -->
+	<div id="header">
+		<!-- website heading, "display: inline;" allows the nav bar button to be next to it -->
+		<h1 id="webtitle" style="display: inline;">CinemaScope</h1>
+		<!-- the button to open the nav bar, "float: right;" makes it stay on the right -->
+		<div id="navbtn" style="float: right;" onclick="openNav()">
+			<!-- these divs create the three white bars for the nav bar icon -->
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+			<div class="navbtnbar"></div>
+		</div>
+	</div>
+	
+	<!-- Nav Bar -->
+	<div id="nav">
+		<!-- the close button ( &times; will create an x ) -->
+		<a href="javascript:void(0)" id="closebtn" onclick="closeNav()" style="float: right;">&times;</a>
+		<!-- the actual links -->
+		<!-- the link for the current page must have class="active", so i can change the color of it to show the user what page they're on -->
+		<a href="index.html">Home</a>
+		<a href="movies.html" class="currentpage">Movies</a>
+		<a href="cinemas.html">Cinemas</a>
+		<a href="menu.html">Menu</a>
+		<a href="signup.html">Sign Up</a>
+	</div>
+	
+	<!-- quality, well written content -->
+	<div id="content">
+		<h2>Movies</h2>
+		<p>We currently have 8 brand new movies showing in our cinemas for you to watch. For more information about a movie and it's viewing times simply click the movie poster you wish to read about.</p>
+	</div>
+	
+	<!-- technically this video isn't a trailer, but im gonna pretend it is -->
+	<div id="content2">
+		<h2>Featured Film - All Legs</h2>
+		<p>Follow the story of a Kiwi with unusually long legs.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Wednesday 10th Feb - 12pm, 5pm <br>
+		Friday 12th Feb - 10am, 8pm <br>
+		Saturday 13th Feb - 10am, 12pm, 3pm, 9pm <br></p>
+		
+		
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/R7gB5qQk4c4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin-left: auto; margin-right: auto; width: 100%; max-width: 560px"></iframe>
+		
+	</div>
+	
+	
+	
+	<!-- it's movie time -->
+	<div id="moviebox1" class="moviebox" onclick="openBox1()" style="display: inline-block;">
+		<img src="images/kingbork.jpeg" alt="King Bork: Lord of Doggos movie poster">
+		<h2>King Bork: Lord of Doggos</h2>
+	</div>
+	
+	<div id="moviedesc1" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox1()">&times;</a>
+		<p>In this movie adaptation of "The Borkian Adventures", the famous crime boss Mr. Kat steals King Bork's favourite toy ball for his pet kitten. Can King Bork rescue his beloved toy ball, and stop the crime boss in the process?</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Saturday 7th Feb - 11am, 2:30pm, 4pm <br>
+		Monday 8th Feb - 4pm, 7pm <br>
+		Thursday 11th Feb - 10am, 12:30pm, 6pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox2" class="moviebox" onclick="openBox2()" style="display: inline-block;">
+		<img src="images/chickenandbird.jpeg" alt="Chicken and Bird movie poster">
+		<h2>Chicken and Bird</h2>
+	</div>
+	
+	<div id="moviedesc2" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox2()">&times;</a>
+		<p>In this long awaited sequel to "Chicken", this scrappy little chicken meets a little baby bird. Chicken must protect this baby bird from danger and get it back to its nest.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Sunday 8th Feb - 10am, 3:30pm, 5pm <br>
+		Tuesday 9th Feb - 3pm, 6pm <br>
+		Friday 12th Feb - 11am, 12:30pm, 6pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox3" class="moviebox" onclick="openBox3()" style="display: inline-block;">
+		<img src="images/detective.jpeg" alt="Adventures of the Detective movie poster">
+		<h2>Adventures of the Detective</h2>
+	</div>
+	
+	<div id="moviedesc3" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox3()">&times;</a>
+		<p>When this lone wolf detective is assigned a super hyper new partner they must figure out how to work togther to solve a mysterious crime.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Wednesday 10th Feb - 12pm, 5pm <br>
+		Thursday 11th Feb - 9am, 5pm, 8pm <br>
+		Saturday 13th Feb - 10am, 12pm, 3pm, 9pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox4" class="moviebox" onclick="openBox4()" style="display: inline-block;">
+		<img src="images/volofo.jpeg" alt="Volofo movie poster">
+		<h2>Volofo</h2>
+	</div>
+	
+	<div id="moviedesc4" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox4()">&times;</a>
+		<p>After days of wandering through the desert, Volof finds a new town. He quickly takes over (and renames the town after himself) but finds out the citizens are very good at setting everything on fire. Now Volof has to pull this town together before they burn it to the ground.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Sunday 8th Feb - 10am, 2:30pm, 5pm <br>
+		Tuesday 9th Feb - 3pm, 7pm <br>
+		Friday 12th Feb - 10am, 6pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox5" class="moviebox" onclick="openBox5()" style="display: inline-block;">
+		<img src="images/killerpizzas.jpeg" alt="Attack of the Killer Pizzas movie poster">
+		<h2>Attack of the Killer Pizzas</h2>
+	</div>
+	
+	<div id="moviedesc5" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox5()">&times;</a>
+		<p>Humanity was not prepared for giant alien killer pizzas armed with razor blades trying to invade the planet.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Wednesday 10th Feb - 12pm, 5pm <br>
+		Friday 12th Feb - 10am, 8pm <br>
+		Saturday 13th Feb - 10am, 12pm, 4pm, 9pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox6" class="moviebox" onclick="openBox6()" style="display: inline-block;">
+		<img src="images/toasterman.jpeg" alt="Toaster Man movie poster">
+		<h2>Toaster Man</h2>
+	</div>
+	
+	<div id="moviedesc6" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox6()">&times;</a>
+		<p>Toaster Man must save the people of Breadtown from the evil Muffin Lord.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Sunday 7th Feb - 10am, 3:30pm, 5pm <br>
+		Tuesday 9th Feb - 3pm, 6pm <br>
+		Friday 12th Feb - 11am, 12:30pm, 6pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox7" class="moviebox" onclick="openBox7()" style="display: inline-block;">
+		<img src="images/oswald.jpeg" alt="Oswald movie poster">
+		<h2>Oswald</h2>
+	</div>
+	
+	<div id="moviedesc7" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox7()">&times;</a>
+		<p>In this masterful movie adaptation of "Oswald: the Platform Game" Oswald gets separated from his flock. He's too young to fly, so he must travel to their migration destination on foot, but there are many dangers in his way.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Tuesday 9th Feb - 12pm, 5pm <br>
+		Thursday 11th Feb - 9am, 5pm, 8pm, 10pm<br>
+		Saturday 13th Feb - 10am, 3pm, 9pm <br>
+		</p>
+	</div>
+	
+	
+	<div id="moviebox8" class="moviebox" onclick="openBox8()" style="display: inline-block;">
+		<img src="images/cawcaw.jpeg" alt="Caw Caw movie poster">
+		<h2>Caw Caw</h2>
+	</div>
+	
+	<div id="moviedesc8" class="moviedesc" style="display: none;">
+		<a href="javascript:void(0)" class="closeboxbtn" onclick="closeBox8()">&times;</a>
+		<p>Crows. Most people think these small birds are harmless. However, a group of crows wearing cowboy hats decide that they've had enough of humans controlling the planet.</p>
+		<p class="viewtimes">Viewing Times: <br>
+		Sunday 8th Feb - 10am, 3pm, 5:30pm <br>
+		Tuesday 9th Feb - 2pm, 6pm <br>
+		Sunday 14th Feb - 11:30am, 12pm, 6pm <br>
+		</p>
+	</div>
+	
+	
+	
+	<div id="time">
+		<p id="datetime"></p>
+		<p><a href="signup.html" id="formlink">Want to recieve updates about new movies and offers?<br>Sign up for our email list!</a></p>
+	</div>
+	
+	<!-- this creates a blank space at the bottom of the webpage so the date and time don't cover the content at the bottom -->
+	<div id="timespace"></div>
+	
+	<script>
+		/* for some reason displaying the date doesn't want to work in the external script */
+		
+		var currentday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var currentmonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		
+		function getDateTime() {
+			var d = new Date();
+			
+			var nday = d.getDay(); /* gets the current day */
+			var ndate = d.getDate(); /* gets the current date */
+			var nmonth = d.getMonth(); /* gets the current month */
+			var nyear = d.getFullYear(); /* gets the current year */
+			
+			var nhour = d.getHours(); /* gets the current hour */
+			var nmin = d.getMinutes(); /* gets the current minute */
+			
+			if (nmin <= 9) nmin = "0" + nmin; /* adds a 0 in front of the minutes if it is 9 or less */
+			
+			var datetimetext = nhour + ":" + nmin + "<br>" + currentday[nday] + ", " + ndate + " " + currentmonth[nmonth] + ", " + nyear;
+			document.getElementById("datetime").innerHTML = datetimetext;
+		}
+		
+		getDateTime();
+		setInterval(getDateTime,1000);
+		
+	</script>
+	
+</body>
+</html>

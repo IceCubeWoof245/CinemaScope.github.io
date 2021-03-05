@@ -1,0 +1,225 @@
+/* CSS styling for CinemaScope */
+
+/* 414 or less for mobile
+tablet 1280 or less 
+desktop 1920x1080 or more */
+
+
+/* font */
+h1, h2, h3, p, a, label {
+	font-family: Arial, Helvetica, Sans-Serif;
+}
+
+
+
+
+/* colors */
+/* dark blue - #2a2073 */
+/* medium blue - #303c96 */
+/* light blue - #3b5ec2 */
+body { background-color: #2a2073; }
+
+#header, #navbtn {
+	color: white; /* white text */
+	background-color: black;
+}
+#navbtn:hover { background-color: grey; } 
+/* turns the button that opens the nav bar grey when hovered over */
+
+#nav a {
+	background-color: #2a2073;
+	color: white;
+}
+/* nav links with the class "currentpage" will be light blue */
+#nav a.currentpage { background-color: #3b5ec2; }
+/* nav links will turn blue when hovered over, but will not if they have the "currentpage" class */
+#nav a:hover:not(.currentpage) { background-color: #303c96; }
+
+
+ 
+
+
+
+
+
+
+/* header */
+#header {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	padding: 25px;
+}
+
+/* the white bars for the nav bar icon */
+.navbtnbar {
+	width: 30px;
+	height: 4px;
+	background-color: white;
+	margin: 6px 0;
+}
+
+/* the div for the nav bar icon */
+#navbtn {
+	/* turns the curser into a pointer when hovering over this */
+	cursor: pointer; 
+	/* color transitions are fun */
+	transition: background-color 0.5s ease;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* the nav bar links */
+#nav a {
+	padding: 10px;
+	display: block;
+	transition: background-color 0.5s ease;
+}
+
+/* the nav bar div */
+#nav {
+	display: none; /* hides nav by default */
+	margin-bottom: 10px;
+}
+
+
+
+
+* {box-sizing:border-box}
+.slideshow-div { /* slideshow container */
+	position: center;
+	margin: auto;
+	margin-bottom: 10px;
+	max-width: 1400px;
+}
+.slides { display: none; } /* hide the images by default */ 
+ #slide1 { display: block; } /* display slide 1 by default */
+
+.slideshownav { /* the div for the slideshow dots */
+	position: absolute;
+	margin-left: 42%;
+	display: flex; 
+	margin-top: -40px;
+}
+
+.slideshowdot { /* the slideshow dots */
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	margin: 0 4px;
+	border: 3px solid rgb(225, 255, 255, 0.8);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.5s ease;
+}
+.active, .slideshowdot:hover { background-color: #ffffff; }
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: .4}
+	{opacity: 1}
+}
+
+
+
+/* content boxes */
+#content, #content2, .moviedesc {
+	width: 100%;
+	color: white;
+	border: solid white 2px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#content a {
+	color: white;
+}
+
+.viewtimes { color: #aaaaaa; }
+
+.moviedesc {
+	padding-top: 20px;
+}
+
+.moviebox {
+	width: 404px;
+	color: white;
+	border: solid white 2px;
+	padding: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.moviebox h2 { padding-left: 10px; }
+
+.moviebox, .closeboxbtn {
+	 cursor: pointer; 
+	 transition: background-color 0.5s ease; 
+}
+
+.closeboxbtn {
+	padding: 10px;
+	color: white;
+}
+
+/* interactable content boxes */
+.moviebox:hover, .closeboxbtn:hover { background-color: #303c96; }
+
+/* cinema locations */
+.cinemalocation { max-height: 400px; max-width: 400px; }
+.cinemabox {
+	width: 404px;
+	color: white;
+	border: solid white 2px;
+	padding: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.cinemabox h2 { padding-left: 10px; }
+
+
+/* sign up form */
+input, option, select {
+	background-color: #2a2073;
+	color: white;
+	cursor: pointer;
+}
+input:hover, option:hover, select:hover { background-color: #303c96; }
+input, select { border: solid grey 1px; padding: 5px; }
+
+label.error { color: red; }
+input.error { border: 1px dashed red; color: red; }
+
+
+
+
+/* date and time box */
+#time {
+	color: white; /* white text */
+	background-color: black;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+#time p { text-align: center; }
+#time a { text-align: center; color: grey; }
+#time a:hover { color: white; }
+
+/* creates a blank space at the bottom of the webpage so the date and time don't cover the content at the bottom */
+#timespace {
+	height: 120px;
+	width: 100%;
+}
+
